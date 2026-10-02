@@ -37,7 +37,8 @@ const projects = [
     type: 'WEB APP / 2026',
     description: '모자 착용 경험을 기록하고 나에게 어울리는 모자를 탐색할 수 있는 반응형 웹앱 디자인',
     visual: 'visual-one',
-    large: true,
+    large: false,
+    image: '/portfolio_/images/caply.png',
     githubUrl: 'https://app.notion.com/p/3b40340145f68082b1d6c09efab3e03d?source=copy_link',
   },
   {
@@ -47,6 +48,7 @@ const projects = [
     description: 'AI를 활용해 광주신세계와 무등산을 연결한 미래형 아웃도어 서비스를 표현한 숏폼 영상',
     visual: 'visual-two',
     large: false,
+    image: '/portfolio_/images/gwangju.png',
     githubUrl: 'https://app.notion.com/p/3d00340145f680faa619e4b56a137c3e?source=copy_link',
   },
     {
@@ -56,6 +58,7 @@ const projects = [
     description: 'AI를 활용해 얼굴형과 스타일에 맞는 선글라스를 추천하는 반응형 웹사이트 & 디자인',
     visual: 'visual-two',
     large: false,
+    image: '/portfolio_/images/chalfit.png',
     githubUrl: 'https://app.notion.com/p/3d50340145f680ee8d17e865c89780e4',
   },
 ];
@@ -205,8 +208,11 @@ function Home() {
               {projects.map((project, index) => (
                 <article className={`project reveal ${project.large ? 'project-large' : ''}`} key={project.id} style={{ transitionDelay: `${index * 100}ms` }} data-testid={`card-project-${project.id}`}>
                   <div className={`project-visual ${project.visual}`}>
-                    {project.visual === 'visual-one' && <div className="browser"><div className="browser-bar"><i /><i /><i /></div><div className="browser-content"><div className="fake-title" /><div className="fake-line" /><div className="fake-line" /><div className="fake-block" /></div></div>}
-                    {project.visual === 'visual-two' && <div className="label-card">more days<br /><span className="serif">for the in-between</span></div>}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image"
+                  />
                   </div>
                   <div className="project-meta"><div><div className="project-title">{project.title}</div><div className="project-type">{project.type}</div></div><ArrowUpRight className="project-arrow" size={19} /></div>
                   <p className="project-description">{project.description}</p>
