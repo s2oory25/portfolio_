@@ -64,9 +64,11 @@ const projects = [
 ];
 
 const timelineEntries = [
-  { date: '2026.08', kind: 'PROJECT', title: 'React Frontend Project', detail: 'React와 Vite를 활용한 웹 애플리케이션 제작' },
-  { date: '2026.07', kind: 'PROJECT', title: 'UI/UX Design Project', detail: 'Figma를 활용한 웹앱 UI/UX 기획 및 디자인' },
-  { date: '2026.07', kind: 'EDUCATION', title: 'Web Publishing', detail: 'HTML, CSS, JavaScript 기반 반응형 웹 제작' },
+  { date: '2026.07', kind: 'EDUCATION', title: 'Web Publishing', detail: 'HTML, CSS, JavaScript 기반으로 반응형 웹 제작을 학습', role: 'Web Publishing', result: '웹의 기본 구조와 반응형 화면 구현 경험' },
+  { date: '2026.08', kind: 'PROJECT', title: 'Caply', detail: 'Figma를 활용한 반응형 웹앱 UI/UX 기획 및 디자인', role: 'UI/UX Design', result: '데스크톱/태블릿/모바일 반응형 웹앱 디자인 완성' },
+  { date: '2026.09', kind: 'EDUCATION', title: 'React Frontend Project', detail: 'React와 Vite를 활용한 웹 애플리케이션 제작', role: 'Frontend Development', result: 'React 기반 페이지 구현 및 상태 관리 경험' },
+  { date: '2026.09~2026.11', kind: 'TEAM PROJECT', title: 'Chalfit', detail: 'AI 선글라스 추천 서비스를 주제로 한 반응형 웹사이트 제작', role: 'UI/UX Design / Frontend', result: 'Figma 디자인부터 React 개발 과정까지 참여' },
+  { date: '2026.09', kind: 'AI CONTENT', title: 'Gwangju Shinsegae', detail: '광주 신세계와 아웃도어 경험을 연결한 AI 숏폼 콘텐츠 제작', role: 'Planning / AI Content', result: 'AI 이미지 / 영상 생성 및 숏폼 콘덴츠 제작 경험' },
 ];
 
 function useReveal() {
@@ -228,9 +230,11 @@ function Home() {
         <section id="career" className="section career" aria-labelledby="career-title">
           <div className="wrap timeline-layout">
             <div className="timeline-intro reveal">
-              <span className="eyebrow">04 — TIMELINE</span>
-              <h2 id="career-title" className="section-heading">배우고,<br /><em>만들어 온 기록.</em></h2>
-              <p>교육에서 프로젝트와 경력까지, 새로운 것을 배우고 화면으로 완성해 온 흐름을 담았습니다.</p>
+              <span className="eyebrow">04 — LEARNING JOURNEY</span>
+              <h2 id="career-title" className="section-heading">배우고,<br /><em>만들며 성장해 온 기록.</em></h2>
+              <p>웹 퍼블리싱부터 UI/UX 디자인, React 개발까지 배운 내용을 직접
+                프로젝트로 연결하며 경험을 쌓아왔습니다.
+              </p>
             </div>
             <div className="timeline reveal" style={{ transitionDelay: '120ms' }}>
               {timelineEntries.map((item, index) => (
@@ -241,6 +245,15 @@ function Home() {
                     <div className="timeline-card-top"><span className={`timeline-kind timeline-kind-${item.kind.toLowerCase()}`}>{item.kind}</span><span className="timeline-index">0{index + 1}</span></div>
                     <h3 className="timeline-role">{item.title}</h3>
                     <p className="timeline-detail">{item.detail}</p>
+                    <div className="timeline-info">
+                      <span>ROLE</span>
+                      <span>{item.role}</span>
+                    </div>
+
+                    <div className="timeline-info">
+                      <span>RESULT</span>
+                      <span>{item.result}</span>
+                    </div>
                   </div>
                 </article>
               ))}

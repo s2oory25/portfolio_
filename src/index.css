@@ -354,3 +354,23 @@
   display: block;
   object-fit: cover;
 }
+
+.timeline-info {
+  display: flex;
+  gap: 16px;
+  margin-top: 9px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.timeline-info span:first-child {
+  width: 42px;
+  flex-shrink: 0;
+  color: hsl(var(--accent));
+  font: 9px var(--app-font-mono);
+  letter-spacing: .08em;
+}
+
+.timeline-info span:last-child {
+  color: hsl(var(--muted-foreground));
+}
